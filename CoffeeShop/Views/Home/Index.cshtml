@@ -8,16 +8,18 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-@foreach(User u in Model)
-            {
-                <h4>Name: @u.firstName @u.lastName DOB @u.Birthday </h4>
-                @if(u.HadCoffee == true)
-                {
-                    <h5>This user has had coffee today.</h5>
-                }
-                else
-                {
-                    <h5>This user has not had coffee today.</h5>
-                }
-            }
+@foreach (User u in Model)
+{
+    <h4>Name: @u.firstName @u.lastName DOB @u.Birthday.ToShortDateString() </h4>
+    @if (u.HadCoffee == true)
+    {
+        <h5>This user has had coffee today.</h5>
+    }
+    else
+    {
+        <h5>This user has not had coffee today.</h5>
+    }
+    <a asp-route-id="@u.Id" asp-action="ViewDetails"><button>View Details</button></a>
+}
+
 

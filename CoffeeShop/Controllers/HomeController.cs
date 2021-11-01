@@ -27,6 +27,14 @@ namespace CoffeeShop.Controllers
             }
             return View(result);            
         }
+        public IActionResult ViewDetails(int id)
+        {
+            using(CoffeeContext context = new CoffeeContext())
+            {
+                User i = context.Users.Find(id);
+                return View(i);
+            }            
+        }
       
         public IActionResult AddUser(User u, string coffeeCheck)
         {

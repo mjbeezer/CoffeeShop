@@ -80,3 +80,4 @@ C:\Users\TheTower\source\repos\CoffeeShop\CoffeeShop\bin\Debug\netcoreapp3.1\run
 C:\Users\TheTower\source\repos\CoffeeShop\CoffeeShop\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\TheTower\source\repos\CoffeeShop\CoffeeShop\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\TheTower\source\repos\CoffeeShop\CoffeeShop\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\TheTower\source\repos\CoffeeShop\CoffeeShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\ViewDetails.cshtml.g.cs
