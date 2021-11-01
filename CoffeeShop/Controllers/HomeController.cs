@@ -20,7 +20,30 @@ namespace CoffeeShop.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<User> result = null;
+            using (CoffeeContext context = new CoffeeContext())
+            {
+                result = context.Users.ToList();
+            }
+            return View(result);            
+        }
+      
+        public IActionResult AddUser(User u, string coffeeCheck)
+        {
+            if (coffeeCheck == "1")
+            {
+                u.HadCoffee = true;
+            }
+            else
+            {
+                u.HadCoffee = false;
+            }
+            using (CoffeeContext context = new CoffeeContext())
+            {
+                context.Users.Add(u);
+                context.SaveChanges();
+            }
+            return Redirect("/");
         }
 
         public IActionResult Privacy()
@@ -33,11 +56,15 @@ namespace CoffeeShop.Controllers
             return View();
         }
 
-        public IActionResult Result(string firstName, string lastName, string email, string passWord)
+        public IActionResult Result(User One)//replace(string firstName etc, with the class User)
         {
-            ViewData["First Name"] = firstName;
-            ViewData["Last Name"] = lastName;
-            return View();
+            if(One.passWord.ToLower() == "password")//add user instance to if statement, in this case User One
+            {
+                return RedirectToAction("Form");
+            }
+            //ViewData["First Name"] = firstName; remove viewdata when using a class
+            //ViewData["Last Name"] = lastName;
+            return View(One);//return view of instance of user, One
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -4,19 +4,29 @@
 @{
 }
 
-<form typeof="post" asp-action="Result">
+<form typeof="post" asp-action="AddUser">
     
     <label for="First Name">Enter First Name</label>
-    <input type="text" name="firstName" placeholder="John" /> <br/> 
+    <input type="text" name="firstName" placeholder="John" required/> <br/> 
     
     <label for="Last Name">Enter Last Name</label>
-    <input type="text" name="lastName" placeholder="Doe" /> <br/>
+    <input type="text" name="lastName" placeholder="Doe" required/> <br/>
 
     <label for="Email">Please Enter Your Email</label>
-    <input type="email" name="email" placeholder="abc@example.com"/> <br/>
+    <input type="email" name="email" placeholder="abc@example.com" required/> <br/>
 
     <label for="Password">Please Enter A Password</label>
-    <input type="password" name="passWord" placeholder="*********" /> <br/>
+    <input type="password" name="passWord" placeholder="*********" minlength="6" required/> <br/>
+
+    <label for="Birthday">Please Enter Your Date of Birth</label>
+    <input type="date" name="Birthday" placeholder="01/01/2000" required /><br />
+
+    <label for="Coffee">Had coffee today</label>
+    <input type="radio" name="coffeeCheck" value="1" /><br />
+
+    <label for="Coffee">Have not had coffee today</label>
+    <input type="radio" name="coffeeCheck" value="0" /><br />
+
 
     <input type="submit" />
 </form>

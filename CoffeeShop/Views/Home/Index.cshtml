@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<User>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -7,4 +8,16 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Form">NewUser</a>
+@foreach(User u in Model)
+            {
+                <h4>Name: @u.firstName @u.lastName DOB @u.Birthday </h4>
+                @if(u.HadCoffee == true)
+                {
+                    <h5>This user has had coffee today.</h5>
+                }
+                else
+                {
+                    <h5>This user has not had coffee today.</h5>
+                }
+            }
+
